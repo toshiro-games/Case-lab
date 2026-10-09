@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="artwork.css" />
-  <link rel="stylesheet" href="game.css?v=containers2" />
+  <link rel="stylesheet" href="game.css?v=inventory-cases1" />
   <link rel="stylesheet" href="promo.css" />
   <link rel="stylesheet" href="market.css" />
 </head>
@@ -17,29 +17,29 @@
   <div class="noise"></div>
   <header>
     <a class="logo" href="#top">CASE<span>//</span>LAB</a>
-    <nav class="panel-nav"><button data-panel="cases" class="active">Кейси</button><button data-panel="upgrade">Апгрейд</button><button data-panel="market">Ринок</button><button data-panel="inventory">Інвентар</button></nav>
+    <nav class="panel-nav"><button data-panel="cases" class="active" data-ui="clicker">КЛІКЕР</button><button data-panel="upgrade" data-ui="upgrade">АПГРЕЙД</button><button data-panel="market" data-ui="market">РИНОК</button><button data-panel="inventory" data-ui="inventory">ІНВЕНТАР</button></nav>
     <div class="top-actions"><select id="language" aria-label="Language"><option value="uk">UKR</option><option value="ru">RUS</option><option value="en">ENG</option></select><button class="promo-button" id="promoBtn">PROMO</button><button class="wallet" id="walletBtn"><span id="coins">25</span></button><button class="inventory-button" id="inventoryBtn" data-i18n="inventory">ІНВЕНТАР <b id="count">0</b></button></div>
   </header>
 
   <main id="top">
     <section class="hero panel-cases">
-      <div class="hero-copy"><p class="eyebrow">CS2 // DROP EXPERIENCE</p><h1 data-i18n="heroTitle">Відкрий<br><em>свій</em> дроп.</h1><p class="lead" data-i18n="heroLead">Інтерактивний симулятор кейсів CS2. Усі предмети — віртуальні, без депозитів і реальної вартості.</p><a class="primary" href="#cases" data-i18n="chooseCase">ОБРАТИ КЕЙС <span>↓</span></a></div>
+      <div class="hero-copy"><p class="eyebrow">CS2 // DROP EXPERIENCE</p><h1 data-i18n="heroTitle">Відкрий<br><em>свій</em> дроп.</h1><p class="lead" data-i18n="heroLead">Інтерактивний симулятор кейсів CS2. Усі предмети — віртуальні, без депозитів і реальної вартості.</p><a class="primary" href="#clicker" data-ui="startClicking">ПОЧАТИ КЛІКАТИ <span>↓</span></a></div>
       <div class="hero-art"><div class="glow"></div><img class="hero-skin" src="assets/ak-47-neon-rider.png" alt="AK-47 | Neon Rider"><div class="orbit o1"></div><div class="orbit o2"></div><div class="tag">SIMULATOR<br>ONLY</div></div>
     </section>
 
-    <section class="section panel-cases" id="cases"><div class="section-title"><p class="eyebrow" data-i18n="caseStep">01 / ВИБІР КЕЙСУ</p><h2 data-i18n="openCase">ВІДКРИЙ КЕЙС</h2><p data-i18n="caseHint">Натисни на кейс — далі рулетка визначить твій дроп.</p></div><div class="cases" id="caseGrid"></div></section>
+    <section class="section legacy-cases" id="cases"><div class="section-title"><p class="eyebrow" data-i18n="caseStep">01 / ВИБІР КЕЙСУ</p><h2 data-i18n="openCase">ВІДКРИЙ КЕЙС</h2><p data-i18n="caseHint">Натисни на кейс — далі рулетка визначить твій дроп.</p></div><div class="cases" id="caseGrid"></div></section>
 
-    <section class="section container-section panel-cases" id="containers"><div class="section-title"><p class="eyebrow">ПОВНИЙ НАБІР КОНТЕЙНЕРІВ</p><h2>КАПСУЛИ Й СУВЕНІРИ</h2><p>Усі кейси, наклейкові капсули та сувенірні пакети CS2. Натисни на контейнер, щоб відкрити його нижче.</p></div><div class="catalog-search"><input id="containerSearch" placeholder="Пошук кейсу, капсули або сувеніра"><span id="containerMeta">Завантаження контейнерів…</span></div><div class="cases external-cases" id="containerGrid"></div><div class="catalog-pagination"><button id="containerPrev">← НАЗАД</button><span id="containerPage">—</span><button id="containerNext">ДАЛІ →</button></div></section>
+    <section class="section container-section panel-market" id="containers"><div class="section-title"><p class="eyebrow" data-ui="containersEyebrow">ПОВНИЙ НАБІР КОНТЕЙНЕРІВ</p><h2 data-ui="containers">КАПСУЛИ Й СУВЕНІРИ</h2><p data-ui="containersLead">Купуй контейнери на ринку. Щоб відкрити їх з інвентарю, потрібен ключ.</p></div><div class="catalog-search"><input id="containerSearch" data-ui-placeholder="containerSearch" placeholder="Пошук кейсу, капсули або сувеніра"><span id="containerMeta">Завантаження контейнерів…</span></div><div class="cases external-cases" id="containerGrid"></div><div class="catalog-pagination"><button id="containerPrev" data-ui="back">← НАЗАД</button><span id="containerPage">—</span><button id="containerNext" data-ui="next">ДАЛІ →</button></div></section>
 
-    <section class="roulette-section panel-cases" id="open"><div class="section-title compact"><p class="eyebrow">02 / РУЛЕТКА</p><h2 id="openTitle">ОБЕРИ КЕЙС</h2></div>
+    <section class="roulette-section panel-market" id="open"><div class="section-title compact"><p class="eyebrow" data-ui="roulette">РУЛЕТКА</p><h2 id="openTitle">ОБЕРИ КЕЙС</h2></div>
       <div class="roulette-shell"><div class="pointer"></div><div class="roulette-viewport"><div class="roulette" id="roulette"></div></div></div>
       <div class="result" id="result"><span>Твій дроп з’явиться тут</span></div>
-      <button class="open-button" id="openBtn" disabled><span data-i18n="buyOpen">КУПИТИ ТА ВІДКРИТИ</span> <span>⟶</span></button>
+      <button class="open-button" id="openBtn" disabled><span data-ui="openWithKey">ВІДКРИТИ З КЛЮЧЕМ</span> <span>⟶</span></button>
     </section>
 
     <section class="clicker-section panel-cases" id="clicker"><div><p class="eyebrow" data-i18n="clickStep">BONUS / КЛІКЕР</p><h2 data-i18n="clickTitle">ЗАРОБИ МОНЕТИ</h2><p data-i18n="clickLead">Натискай на жетон, щоб купувати кейси. Це лише ігрова валюта.</p></div><button class="coin-clicker" id="coinClicker"><span>◈</span><b>+5</b></button><div class="clicker-total"><strong id="clickCoins">25</strong><span data-i18n="coinsLabel">МОНЕТ</span></div></section>
 
-    <section class="section catalog panel-market" id="catalog"><div class="section-title"><p class="eyebrow">ПОВНИЙ КАТАЛОГ CS2</p><h2>ПРЕДМЕТИ, НАКЛЕЙКИ Й КАПСУЛИ</h2><p>Каталог завантажує всі доступні предмети CS2 за категоріями. Скіни можна купувати за ігрові $.</p></div>
+    <section class="section catalog panel-market" id="catalog"><div class="section-title"><p class="eyebrow" data-ui="fullCatalog">ПОВНИЙ КАТАЛОГ CS2</p><h2 data-ui="items">ПРЕДМЕТИ Й НАКЛЕЙКИ</h2><p data-ui="catalogLead">Купуй предмети за ігрові $. Контейнери знаходяться нижче, а ключі — у цій вкладці.</p></div>
       <div class="catalog-search"><input id="catalogSearch" placeholder="Пошук за назвою предмета"><span id="catalogMeta">Завантаження каталогу…</span></div>
       <div class="filters" id="filters"><button class="active" data-category="skins">СКІНИ</button><button data-category="stickers">НАКЛЕЙКИ</button><button data-category="collectibles">КОЛЕКЦІЙНІ</button><button data-category="graffiti">ГРАФІТІ</button><button data-category="agents">АГЕНТИ</button><button data-category="patches">ПАТЧІ</button><button data-category="keychains">БРЕЛОКИ</button><button data-category="music_kits">МУЗИЧНІ НАБОРИ</button><button data-category="keys">КЛЮЧІ</button><button data-category="tools">ІНШЕ</button></div>
       <div class="skins" id="skinGrid"></div><div class="catalog-pagination"><button id="catalogPrev">← НАЗАД</button><span id="catalogPage">—</span><button id="catalogNext">ДАЛІ →</button></div>
@@ -55,6 +55,6 @@
   <footer>CASE//LAB <span>·</span> FAN-MADE CS2 CASE OPENING SIMULATOR <span>·</span> NO REAL ITEMS OR MONEY</footer>
   <script src="case-pools.js"></script>
   <script src="all-case-pools.js"></script>
-  <script src="app.js?v=containers3"></script>
+  <script src="app.js?v=inventory-cases1"></script>
 </body>
 </html>
