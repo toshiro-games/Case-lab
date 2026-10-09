@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="artwork.css" />
-  <link rel="stylesheet" href="game.css?v=upgrade2" />
+  <link rel="stylesheet" href="game.css?v=panels2" />
   <link rel="stylesheet" href="promo.css" />
   <link rel="stylesheet" href="market.css" />
 </head>
@@ -17,41 +17,41 @@
   <div class="noise"></div>
   <header>
     <a class="logo" href="#top">CASE<span>//</span>LAB</a>
-    <nav><a href="#cases">Кейси</a><a href="#catalog">Каталог скінів</a><a href="#market">Маркет</a><a href="#upgrade">Апгрейд</a><a href="#inventory">Інвентар</a></nav>
+    <nav class="panel-nav"><button data-panel="cases" class="active">Кейси</button><button data-panel="upgrade">Апгрейд</button><button data-panel="market">Ринок</button><button data-panel="inventory">Інвентар</button></nav>
     <div class="top-actions"><select id="language" aria-label="Language"><option value="uk">UKR</option><option value="ru">RUS</option><option value="en">ENG</option></select><button class="promo-button" id="promoBtn">PROMO</button><button class="wallet" id="walletBtn"><span id="coins">25</span></button><button class="inventory-button" id="inventoryBtn" data-i18n="inventory">ІНВЕНТАР <b id="count">0</b></button></div>
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero panel-cases">
       <div class="hero-copy"><p class="eyebrow">CS2 // DROP EXPERIENCE</p><h1 data-i18n="heroTitle">Відкрий<br><em>свій</em> дроп.</h1><p class="lead" data-i18n="heroLead">Інтерактивний симулятор кейсів CS2. Усі предмети — віртуальні, без депозитів і реальної вартості.</p><a class="primary" href="#cases" data-i18n="chooseCase">ОБРАТИ КЕЙС <span>↓</span></a></div>
       <div class="hero-art"><div class="glow"></div><img class="hero-skin" src="assets/ak-47-neon-rider.png" alt="AK-47 | Neon Rider"><div class="orbit o1"></div><div class="orbit o2"></div><div class="tag">SIMULATOR<br>ONLY</div></div>
     </section>
 
-    <section class="section" id="cases"><div class="section-title"><p class="eyebrow" data-i18n="caseStep">01 / ВИБІР КЕЙСУ</p><h2 data-i18n="openCase">ВІДКРИЙ КЕЙС</h2><p data-i18n="caseHint">Натисни на кейс — далі рулетка визначить твій дроп.</p></div><div class="cases" id="caseGrid"></div></section>
+    <section class="section panel-cases" id="cases"><div class="section-title"><p class="eyebrow" data-i18n="caseStep">01 / ВИБІР КЕЙСУ</p><h2 data-i18n="openCase">ВІДКРИЙ КЕЙС</h2><p data-i18n="caseHint">Натисни на кейс — далі рулетка визначить твій дроп.</p></div><div class="cases" id="caseGrid"></div></section>
 
-    <section class="roulette-section" id="open"><div class="section-title compact"><p class="eyebrow">02 / РУЛЕТКА</p><h2 id="openTitle">ОБЕРИ КЕЙС</h2></div>
+    <section class="roulette-section panel-cases" id="open"><div class="section-title compact"><p class="eyebrow">02 / РУЛЕТКА</p><h2 id="openTitle">ОБЕРИ КЕЙС</h2></div>
       <div class="roulette-shell"><div class="pointer"></div><div class="roulette-viewport"><div class="roulette" id="roulette"></div></div></div>
       <div class="result" id="result"><span>Твій дроп з’явиться тут</span></div>
       <button class="open-button" id="openBtn" disabled><span data-i18n="buyOpen">КУПИТИ ТА ВІДКРИТИ</span> <span>⟶</span></button>
     </section>
 
-    <section class="clicker-section" id="clicker"><div><p class="eyebrow" data-i18n="clickStep">BONUS / КЛІКЕР</p><h2 data-i18n="clickTitle">ЗАРОБИ МОНЕТИ</h2><p data-i18n="clickLead">Натискай на жетон, щоб купувати кейси. Це лише ігрова валюта.</p></div><button class="coin-clicker" id="coinClicker"><span>◈</span><b>+5</b></button><div class="clicker-total"><strong id="clickCoins">25</strong><span data-i18n="coinsLabel">МОНЕТ</span></div></section>
+    <section class="clicker-section panel-cases" id="clicker"><div><p class="eyebrow" data-i18n="clickStep">BONUS / КЛІКЕР</p><h2 data-i18n="clickTitle">ЗАРОБИ МОНЕТИ</h2><p data-i18n="clickLead">Натискай на жетон, щоб купувати кейси. Це лише ігрова валюта.</p></div><button class="coin-clicker" id="coinClicker"><span>◈</span><b>+5</b></button><div class="clicker-total"><strong id="clickCoins">25</strong><span data-i18n="coinsLabel">МОНЕТ</span></div></section>
 
-    <section class="section catalog" id="catalog"><div class="section-title"><p class="eyebrow">03 / КАТАЛОГ</p><h2>УСІ СКІНИ</h2><p>Демонстраційний каталог найвідоміших колекцій CS2.</p></div>
+    <section class="section catalog panel-market" id="catalog"><div class="section-title"><p class="eyebrow">РИНКОВИЙ КАТАЛОГ</p><h2>СКІНИ ДЛЯ КУПІВЛІ</h2><p>Купуй скіни за ігрові $, щоб додати їх до інвентарю або використати в апгрейді.</p></div>
       <div class="filters" id="filters"><button class="active" data-filter="all">УСІ</button><button data-filter="Covert">ТАЙНЕ</button><button data-filter="Classified">ЗАСЕКРЕЧЕНЕ</button><button data-filter="Restricted">ЗАБОРОНЕНЕ</button><button data-filter="Mil-Spec Grade">АРМІЙСЬКЕ</button><button data-filter="rare">РІДКІСНЕ</button></div>
       <div class="skins" id="skinGrid"></div>
     </section>
 
-    <section class="section market" id="market"><div class="section-title"><p class="eyebrow">04 / STEAM MARKET</p><h2>МАРКЕТ ЦІН</h2><p>Поточні ціни Steam Community Market у USD. Ігрова валюта не має реальної вартості.</p></div><div class="market-tools"><input id="marketSearch" placeholder="Пошук скіна, наприклад AK-47 | Head Shot"><button id="marketSearchBtn">ЗНАЙТИ ЦІНУ</button></div><div class="market-result" id="marketResult">Введи назву предмета, щоб перевірити Steam Market.</div></section>
+    <section class="section market panel-market" id="market"><div class="section-title"><p class="eyebrow">STEAM MARKET</p><h2>ДОВІДКА ЦІН</h2><p>Перевір актуальну ціну Steam Community Market у USD.</p></div><div class="market-tools"><input id="marketSearch" placeholder="Пошук скіна, наприклад AK-47 | Head Shot"><button id="marketSearchBtn">ЗНАЙТИ ЦІНУ</button></div><div class="market-result" id="marketResult">Введи назву предмета, щоб перевірити Steam Market.</div></section>
 
-    <section class="section upgrade" id="upgrade"><div class="section-title"><p class="eyebrow">05 / UPGRADE STATION</p><h2>АПГРЕЙД СКІНІВ</h2><p>Ризикни своїм скіном заради кращого. Усі предмети та монети — лише в грі.</p></div><div class="upgrade-arena"><article class="upgrade-item"><span>ТВІЙ СКІН</span><div class="upgrade-skin" id="upgradeFromCard"><i>Обери скін</i></div></article><div class="upgrade-wheel" id="upgradeWheel"><div class="upgrade-needle"></div><div class="wheel-core"><strong id="upgradePercent">—%</strong><small>ШАНС</small></div></div><article class="upgrade-item target"><span>БАЖАНИЙ СКІН</span><div class="upgrade-skin" id="upgradeToCard"><i>Обери скін</i></div></article></div><div class="upgrade-controls"><label>Твій скін<select id="upgradeFrom"></select></label><label>Бажаний скін<select id="upgradeTo"></select></label><button id="upgradeBtn">ЗАПУСТИТИ АПГРЕЙД <b>⟶</b></button></div><div class="upgrade-result" id="upgradeResult">Відкрий кейс, щоб додати скін до інвентарю.</div></section>
+    <section class="section upgrade panel-upgrade" id="upgrade"><div class="section-title"><p class="eyebrow">UPGRADE STATION</p><h2>АПГРЕЙД СКІНІВ</h2><p>Ризикни своїм скіном заради кращого. Усі предмети та монети — лише в грі.</p></div><div class="upgrade-arena"><article class="upgrade-item"><span>ТВІЙ СКІН</span><div class="upgrade-skin" id="upgradeFromCard"><i>Обери скін</i></div></article><div class="upgrade-wheel" id="upgradeWheel"><div class="upgrade-needle"></div><div class="wheel-core"><strong id="upgradePercent">—%</strong><small>ШАНС</small></div></div><article class="upgrade-item target"><span>БАЖАНИЙ СКІН</span><div class="upgrade-skin" id="upgradeToCard"><i>Обери скін</i></div></article></div><div class="upgrade-controls"><label>Твій скін<select id="upgradeFrom"></select></label><label>Бажаний скін<select id="upgradeTo"></select></label><button id="upgradeBtn">ЗАПУСТИТИ АПГРЕЙД <b>⟶</b></button></div><div class="upgrade-result" id="upgradeResult">Відкрий кейс, щоб додати скін до інвентарю.</div></section>
 
-    <section class="section inventory" id="inventory"><div class="section-title"><p class="eyebrow" data-i18n="inventoryStep">05 / ТВОЯ КОЛЕКЦІЯ</p><h2 data-i18n="inventory">ІНВЕНТАР</h2></div><div class="inventory-grid" id="inventoryGrid"><div class="empty" data-i18n="empty">Ще порожньо. Відкрий перший кейс.</div></div></section>
+    <section class="section inventory panel-inventory" id="inventory"><div class="section-title"><p class="eyebrow" data-i18n="inventoryStep">ТВОЯ КОЛЕКЦІЯ</p><h2 data-i18n="inventory">ІНВЕНТАР</h2></div><div class="inventory-grid" id="inventoryGrid"><div class="empty" data-i18n="empty">Ще порожньо. Відкрий перший кейс.</div></div></section>
   </main>
   <div class="promo-modal" id="promoModal" hidden><div class="promo-dialog"><button class="promo-close" id="promoClose">×</button><p class="eyebrow">CASE//LAB BONUS</p><h2 id="promoTitle">ПРОМОКОД</h2><p id="promoHint">Введи код, щоб отримати ігрові монети.</p><div class="promo-form"><input id="promoInput" autocomplete="off" placeholder="PROMO CODE"><button id="promoRedeem">OK</button></div><div id="promoMessage"></div></div></div>
   <footer>CASE//LAB <span>·</span> FAN-MADE CS2 CASE OPENING SIMULATOR <span>·</span> NO REAL ITEMS OR MONEY</footer>
   <script src="case-pools.js"></script>
   <script src="all-case-pools.js"></script>
-  <script src="app.js?v=upgrade2"></script>
+  <script src="app.js?v=panels2"></script>
 </body>
 </html>
