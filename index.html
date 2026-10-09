@@ -17,14 +17,14 @@
   <div class="noise"></div>
   <header>
     <a class="logo" href="#top">CASE<span>//</span>LAB</a>
-    <nav><a href="#cases">Кейси</a><a href="#catalog">Каталог скінів</a><a href="#market">Маркет</a><a href="#inventory">Інвентар</a></nav>
-    <div class="top-actions"><select id="language" aria-label="Language"><option value="uk">UKR</option><option value="ru">RUS</option><option value="en">ENG</option></select><button class="promo-button" id="promoBtn">PROMO</button><button class="wallet" id="walletBtn">◈ <span id="coins">25</span></button><button class="inventory-button" id="inventoryBtn" data-i18n="inventory">ІНВЕНТАР <b id="count">0</b></button></div>
+    <nav><a href="#cases">Кейси</a><a href="#catalog">Каталог скінів</a><a href="#market">Маркет</a><a href="#upgrade">Апгрейд</a><a href="#inventory">Інвентар</a></nav>
+    <div class="top-actions"><select id="language" aria-label="Language"><option value="uk">UKR</option><option value="ru">RUS</option><option value="en">ENG</option></select><button class="promo-button" id="promoBtn">PROMO</button><button class="wallet" id="walletBtn"><span id="coins">25</span></button><button class="inventory-button" id="inventoryBtn" data-i18n="inventory">ІНВЕНТАР <b id="count">0</b></button></div>
   </header>
 
   <main id="top">
     <section class="hero">
       <div class="hero-copy"><p class="eyebrow">CS2 // DROP EXPERIENCE</p><h1 data-i18n="heroTitle">Відкрий<br><em>свій</em> дроп.</h1><p class="lead" data-i18n="heroLead">Інтерактивний симулятор кейсів CS2. Усі предмети — віртуальні, без депозитів і реальної вартості.</p><a class="primary" href="#cases" data-i18n="chooseCase">ОБРАТИ КЕЙС <span>↓</span></a></div>
-      <div class="hero-art"><div class="glow"></div><div class="weapon ak large"><i></i><span>AK-47<br><b>NEON RIDER</b></span></div><div class="orbit o1"></div><div class="orbit o2"></div><div class="tag">SIMULATOR<br>ONLY</div></div>
+      <div class="hero-art"><div class="glow"></div><img class="hero-skin" src="assets/ak-47-neon-rider.png" alt="AK-47 | Neon Rider"><div class="orbit o1"></div><div class="orbit o2"></div><div class="tag">SIMULATOR<br>ONLY</div></div>
     </section>
 
     <section class="section" id="cases"><div class="section-title"><p class="eyebrow" data-i18n="caseStep">01 / ВИБІР КЕЙСУ</p><h2 data-i18n="openCase">ВІДКРИЙ КЕЙС</h2><p data-i18n="caseHint">Натисни на кейс — далі рулетка визначить твій дроп.</p></div><div class="cases" id="caseGrid"></div></section>
@@ -44,12 +44,14 @@
 
     <section class="section market" id="market"><div class="section-title"><p class="eyebrow">04 / STEAM MARKET</p><h2>МАРКЕТ ЦІН</h2><p>Поточні ціни Steam Community Market у USD. Ігрова валюта CS$ не має реальної вартості.</p></div><div class="market-tools"><input id="marketSearch" placeholder="Пошук скіна, наприклад AK-47 | Head Shot"><button id="marketSearchBtn">ЗНАЙТИ ЦІНУ</button></div><div class="market-result" id="marketResult">Введи назву предмета, щоб перевірити Steam Market.</div></section>
 
+    <section class="section upgrade" id="upgrade"><div class="section-title"><p class="eyebrow">05 / UPGRADE</p><h2>АПГРЕЙД СКІНІВ</h2><p>Обери скін зі свого інвентарю та спробуй обміняти його на дорожчий. Усе віртуальне.</p></div><div class="upgrade-panel"><label>Твій скін<select id="upgradeFrom"></select></label><div class="upgrade-arrow">⟶</div><label>Бажаний скін<select id="upgradeTo"></select></label><div class="upgrade-chance" id="upgradeChance">Шанс: —</div><button id="upgradeBtn">СПРОБУВАТИ АПГРЕЙД</button></div><div class="upgrade-result" id="upgradeResult">Відкрий кейс, щоб додати скін до інвентарю.</div></section>
+
     <section class="section inventory" id="inventory"><div class="section-title"><p class="eyebrow" data-i18n="inventoryStep">05 / ТВОЯ КОЛЕКЦІЯ</p><h2 data-i18n="inventory">ІНВЕНТАР</h2></div><div class="inventory-grid" id="inventoryGrid"><div class="empty" data-i18n="empty">Ще порожньо. Відкрий перший кейс.</div></div></section>
   </main>
   <div class="promo-modal" id="promoModal" hidden><div class="promo-dialog"><button class="promo-close" id="promoClose">×</button><p class="eyebrow">CASE//LAB BONUS</p><h2 id="promoTitle">ПРОМОКОД</h2><p id="promoHint">Введи код, щоб отримати ігрові монети.</p><div class="promo-form"><input id="promoInput" autocomplete="off" placeholder="PROMO CODE"><button id="promoRedeem">OK</button></div><div id="promoMessage"></div></div></div>
   <footer>CASE//LAB <span>·</span> FAN-MADE CS2 CASE OPENING SIMULATOR <span>·</span> NO REAL ITEMS OR MONEY</footer>
   <script src="case-pools.js"></script>
   <script src="all-case-pools.js"></script>
-  <script src="app.js?v=b8024b2"></script>
+  <script src="app.js?v=upgrade1"></script>
 </body>
 </html>
