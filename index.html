@@ -11,12 +11,13 @@
   <link rel="stylesheet" href="artwork.css" />
   <link rel="stylesheet" href="game.css" />
   <link rel="stylesheet" href="promo.css" />
+  <link rel="stylesheet" href="market.css" />
 </head>
 <body>
   <div class="noise"></div>
   <header>
     <a class="logo" href="#top">CASE<span>//</span>LAB</a>
-    <nav><a href="#cases">Кейси</a><a href="#catalog">Каталог скінів</a><a href="#inventory">Інвентар</a></nav>
+    <nav><a href="#cases">Кейси</a><a href="#catalog">Каталог скінів</a><a href="#market">Маркет</a><a href="#inventory">Інвентар</a></nav>
     <div class="top-actions"><select id="language" aria-label="Language"><option value="uk">UKR</option><option value="ru">RUS</option><option value="en">ENG</option></select><button class="promo-button" id="promoBtn">PROMO</button><button class="wallet" id="walletBtn">◈ <span id="coins">25</span></button><button class="inventory-button" id="inventoryBtn" data-i18n="inventory">ІНВЕНТАР <b id="count">0</b></button></div>
   </header>
 
@@ -41,7 +42,9 @@
       <div class="skins" id="skinGrid"></div>
     </section>
 
-    <section class="section inventory" id="inventory"><div class="section-title"><p class="eyebrow" data-i18n="inventoryStep">04 / ТВОЯ КОЛЕКЦІЯ</p><h2 data-i18n="inventory">ІНВЕНТАР</h2></div><div class="inventory-grid" id="inventoryGrid"><div class="empty" data-i18n="empty">Ще порожньо. Відкрий перший кейс.</div></div></section>
+    <section class="section market" id="market"><div class="section-title"><p class="eyebrow">04 / STEAM MARKET</p><h2>МАРКЕТ ЦІН</h2><p>Поточні ціни Steam Community Market у USD. Ігрова валюта CS$ не має реальної вартості.</p></div><div class="market-tools"><input id="marketSearch" placeholder="Пошук скіна, наприклад AK-47 | Head Shot"><button id="marketSearchBtn">ЗНАЙТИ ЦІНУ</button></div><div class="market-result" id="marketResult">Введи назву предмета, щоб перевірити Steam Market.</div></section>
+
+    <section class="section inventory" id="inventory"><div class="section-title"><p class="eyebrow" data-i18n="inventoryStep">05 / ТВОЯ КОЛЕКЦІЯ</p><h2 data-i18n="inventory">ІНВЕНТАР</h2></div><div class="inventory-grid" id="inventoryGrid"><div class="empty" data-i18n="empty">Ще порожньо. Відкрий перший кейс.</div></div></section>
   </main>
   <div class="promo-modal" id="promoModal" hidden><div class="promo-dialog"><button class="promo-close" id="promoClose">×</button><p class="eyebrow">CASE//LAB BONUS</p><h2 id="promoTitle">ПРОМОКОД</h2><p id="promoHint">Введи код, щоб отримати ігрові монети.</p><div class="promo-form"><input id="promoInput" autocomplete="off" placeholder="PROMO CODE"><button id="promoRedeem">OK</button></div><div id="promoMessage"></div></div></div>
   <footer>CASE//LAB <span>·</span> FAN-MADE CS2 CASE OPENING SIMULATOR <span>·</span> NO REAL ITEMS OR MONEY</footer>
