@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="artwork.css" />
-  <link rel="stylesheet" href="game.css?v=needle-zone1" />
+  <link rel="stylesheet" href="game.css?v=full-catalog1" />
   <link rel="stylesheet" href="promo.css" />
   <link rel="stylesheet" href="market.css" />
 </head>
@@ -37,9 +37,10 @@
 
     <section class="clicker-section panel-cases" id="clicker"><div><p class="eyebrow" data-i18n="clickStep">BONUS / КЛІКЕР</p><h2 data-i18n="clickTitle">ЗАРОБИ МОНЕТИ</h2><p data-i18n="clickLead">Натискай на жетон, щоб купувати кейси. Це лише ігрова валюта.</p></div><button class="coin-clicker" id="coinClicker"><span>◈</span><b>+5</b></button><div class="clicker-total"><strong id="clickCoins">25</strong><span data-i18n="coinsLabel">МОНЕТ</span></div></section>
 
-    <section class="section catalog panel-market" id="catalog"><div class="section-title"><p class="eyebrow">РИНКОВИЙ КАТАЛОГ</p><h2>СКІНИ ДЛЯ КУПІВЛІ</h2><p>Купуй скіни за ігрові $, щоб додати їх до інвентарю або використати в апгрейді.</p></div>
-      <div class="filters" id="filters"><button class="active" data-filter="all">УСІ</button><button data-filter="Covert">ТАЙНЕ</button><button data-filter="Classified">ЗАСЕКРЕЧЕНЕ</button><button data-filter="Restricted">ЗАБОРОНЕНЕ</button><button data-filter="Mil-Spec Grade">АРМІЙСЬКЕ</button><button data-filter="rare">РІДКІСНЕ</button></div>
-      <div class="skins" id="skinGrid"></div>
+    <section class="section catalog panel-market" id="catalog"><div class="section-title"><p class="eyebrow">ПОВНИЙ КАТАЛОГ CS2</p><h2>ПРЕДМЕТИ, НАКЛЕЙКИ Й КАПСУЛИ</h2><p>Каталог завантажує всі доступні предмети CS2 за категоріями. Скіни можна купувати за ігрові $.</p></div>
+      <div class="catalog-search"><input id="catalogSearch" placeholder="Пошук за назвою предмета"><span id="catalogMeta">Завантаження каталогу…</span></div>
+      <div class="filters" id="filters"><button class="active" data-category="skins">СКІНИ</button><button data-category="crates">КЕЙСИ / КАПСУЛИ / СУВЕНІРИ</button><button data-category="stickers">НАКЛЕЙКИ</button><button data-category="collectibles">КОЛЕКЦІЙНІ</button><button data-category="graffiti">ГРАФІТІ</button><button data-category="agents">АГЕНТИ</button><button data-category="patches">ПАТЧІ</button><button data-category="keychains">БРЕЛОКИ</button><button data-category="music_kits">МУЗИЧНІ НАБОРИ</button><button data-category="keys">КЛЮЧІ</button><button data-category="tools">ІНШЕ</button></div>
+      <div class="skins" id="skinGrid"></div><div class="catalog-pagination"><button id="catalogPrev">← НАЗАД</button><span id="catalogPage">—</span><button id="catalogNext">ДАЛІ →</button></div>
     </section>
 
     <section class="section market panel-market" id="market"><div class="section-title"><p class="eyebrow">STEAM MARKET</p><h2>ДОВІДКА ЦІН</h2><p>Перевір актуальну ціну Steam Community Market у USD для якості «Прямо з заводу».</p></div><div class="market-tools"><input id="marketSearch" placeholder="Пошук скіна, наприклад AK-47 | Head Shot"><button id="marketSearchBtn">ЗНАЙТИ ЦІНУ FN</button></div><div class="market-result" id="marketResult">Введи назву предмета, щоб перевірити Steam Market для «Прямо з заводу».</div></section>
@@ -52,6 +53,6 @@
   <footer>CASE//LAB <span>·</span> FAN-MADE CS2 CASE OPENING SIMULATOR <span>·</span> NO REAL ITEMS OR MONEY</footer>
   <script src="case-pools.js"></script>
   <script src="all-case-pools.js"></script>
-  <script src="app.js?v=needle-zone1"></script>
+  <script src="app.js?v=full-catalog1"></script>
 </body>
 </html>
